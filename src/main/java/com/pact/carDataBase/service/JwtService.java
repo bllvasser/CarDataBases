@@ -22,6 +22,7 @@ import jakarta.servlet.http.HttpServletResponse;
 	@Service 
 public class JwtService {
 	
+private static final String PREFIX = "Bearer";
 private final String SECRET_KEY	= "efe1aa1cadaf85c7eec5c703d222defc419455916e7a8c3078ed1b022a0c4739";
 
 
@@ -66,7 +67,7 @@ private Claims extractAllClaims(String token) {
 
 public String generateToken(User user)	{
 	
-	HttpServletRequest req;
+	HttpServletRequest req = null;
 	
 	HttpServletResponse res = null;
 	
@@ -77,7 +78,13 @@ public String generateToken(User user)	{
 			.expiration(new Date(System.currentTimeMillis() + 24*60*60*1000))
 			.signWith(getSigninKey())
 			.compact();
-	res.addHeader("Authorization", SECRET_KEY);
+	
+	res.addHeader("Authorization", PREFIX + " " + token);
+	res.addHeader("Access-Control-Expose-Headers", "Authorization");
+	
+
+	
+	
 	
 		
 	
