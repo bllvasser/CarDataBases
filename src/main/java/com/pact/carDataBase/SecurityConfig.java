@@ -36,7 +36,7 @@ public class SecurityConfig  {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests(request -> request.anyRequest()
                 .authenticated())
-            .httpBasic(Customizer.withDefaults()) //which import to use for customizer
+            .httpBasic(Customizer.withDefaults()) 
             .build();
     }
 

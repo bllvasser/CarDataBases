@@ -13,10 +13,9 @@ import com.pact.carDataBase.domain.OwnerRepository;
 import com.pact.carDataBase.domain.Car;
 
 
-@SpringBootApplication(exclude = {  org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class})
 
-//@SpringBootApplication(exclude={SecurityAutoConfiguration.class})
 
+@SpringBootApplication
 public class CarDataBaseApplication {
 	
 	@Autowired
