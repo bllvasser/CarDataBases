@@ -1,4 +1,4 @@
-package config;
+package com.pact.carDataBase;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,5 +46,5 @@ public class SecurityConfig  {
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         return encoder;
     }
-
+    
 }
